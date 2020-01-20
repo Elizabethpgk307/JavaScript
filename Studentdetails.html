@@ -1,0 +1,54 @@
+<html>
+<title>
+    validation
+</title>
+<script>
+    function myfunction() {
+        var at = document.getElementById("email").value.indexOf("@");
+        var age = document.getElementById("age").value;
+        var fname = document.getElementById("name").value;
+        var regno = document.getElementById("regno").value;
+        var mark = document.getElementById("mark").value;
+        var course = document.getElementById("course").value;
+        submitOK = "true";
+        if (fname.length > 10) {
+            alert("the name may have no more than 10 characters");
+            submitOK = "false";
+
+        }
+        if (isNaN(age) || age < 1 || age > 100) {
+            alert("The age must be a number between 1 and 10");
+            submitOK = "false";
+        }
+        if (at == -1) {
+            alert("Not a valid email");
+            submitOK = "false";
+        }
+        if (regno > 100) {
+            alert("The age must be a number between 1 and 100");
+            submitOK = "false";
+        }
+        if (mark < 100) {
+            alert("The age must be a number between 1 and 100");
+            submitOK = "false";
+        }
+        if (course.length > 10) {
+            alert("course name must have more than 10 characters");
+            sumitOk = "false";
+        }
+        if (submitOK == "false") {
+            return false;
+        }
+    }
+</script>
+<form>
+    name:<input type="text" id="name" name="name" required/><br><br><br> regno:
+    <input type="text" id="regno" name="regno" required/><br><br><br> &nbsp;&nbsp;age:
+    <input type="text" id="age" name="age" required/><br><br><br> email:
+    <input type="text" id="email" name="email" required/><br><br><br> course:
+    <input type="text" id="course" name="course" required /><br><br><br> mark:
+    <input type="text" id="mark" name="mark" required /><br><br><br>
+    <input type="button" value="ok" onclick="myfunction()">
+</form>
+
+</html>
